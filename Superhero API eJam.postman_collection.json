@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "ce433ca5-e15b-4e44-8fc0-00fe4cac30eb",
+		"name": "Superhero API eJam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27284832"
+	},
+	"item": [
+		{
+			"name": "All Superheroes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/superhero",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"superhero"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Superhero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"superman\",\r\n    \"power\": \"fly\",\r\n    \"humilityScore\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/superhero",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"superhero"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
