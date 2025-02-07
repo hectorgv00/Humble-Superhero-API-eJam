@@ -2,7 +2,9 @@ import { iSuperhero } from "../interfaces/iSuperhero";
 
 export class SuperheroService {
   async getSuperheroes() {
-    const response = await fetch("http://localhost:4000/superhero");
+    const response = await fetch(
+      "https://humble-superhero-api.hectorgv00.online/"
+    );
     const data: { statusCode: number; data: iSuperhero[] } =
       await response.json();
     return data.data;
@@ -10,7 +12,7 @@ export class SuperheroService {
 
   async addSuperhero(body: iSuperhero) {
     try {
-      await fetch("http://localhost:4000/superhero", {
+      await fetch("https://humble-superhero-api.hectorgv00.online/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
