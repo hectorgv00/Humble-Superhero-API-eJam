@@ -6,6 +6,7 @@ import { Injectable } from '@nestjs/common';
 export class SuperheroRepository {
   constructor(private dbService: DbService) {}
 
+  // Method that calls the getAll method from the db service and sorts the data by humility score descending
   public getAllSortedByHumilityScore() {
     // We get the information from the "database"
     const data = this.dbService.getAll();
@@ -14,6 +15,7 @@ export class SuperheroRepository {
     return data.sort((a, b) => b.humilityScore - a.humilityScore);
   }
 
+  // Method that calls the store method from the db service
   public create(data: CreateSuperheroDto) {
     this.dbService.store(data);
   }

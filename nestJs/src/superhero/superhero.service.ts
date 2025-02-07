@@ -6,23 +6,13 @@ import { SuperheroRepository } from './superhero.repository';
 export class SuperheroService {
   constructor(private superheroRE: SuperheroRepository) {}
 
+  // Method that calls the create method from the superhero repository
   create(createSuperheroDto: CreateSuperheroDto) {
     return this.superheroRE.create(createSuperheroDto);
   }
 
+  // Method that calls the getAllSortedByHumilityScore method from the superhero repository
   getAllSortedByHumilityScore() {
     return this.superheroRE.getAllSortedByHumilityScore();
   }
-
-  // findOne(id: number) {
-  //   return `This action returns a #${id} superhero`;
-  // }
-
-  // update(id: number, updateSuperheroDto: UpdateSuperheroDto) {
-  //   return `This action updates a #${id} superhero`;
-  // }
-
-  // remove(id: number) {
-  //   return `This action removes a #${id} superhero`;
-  // }
 }
