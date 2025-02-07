@@ -1,4 +1,4 @@
-import { DbService } from 'src/service/db.service';
+import { DbService } from '../service/db.service';
 import { CreateSuperheroDto } from './dto/create-superhero.dto';
 import { Injectable } from '@nestjs/common';
 
