@@ -17,7 +17,6 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(
     });
 
     useEffect(() => {
-      console.log(form);
       const isCompleteForm = checkCompleteForm();
       isCompleteForm
         ? buttonRef.current?.classList.remove("disabled")
@@ -46,7 +45,6 @@ const Modal = forwardRef<HTMLDivElement, ModalProps>(
       let value = e.target.value;
       if (!isNaN(Number(value)) && Number(value) > 0 && Number(value) <= 10) {
         if (value.length > 1 && value[0] == "0") {
-          console.log(value);
           value = value[1];
           e.target.value = value;
         }

@@ -18,19 +18,16 @@ export const Superhero = () => {
 
   const obtainSuperheroes = async () => {
     const obtainedSuperheroes = await superheroService.getSuperheroes();
-    console.log(obtainedSuperheroes);
     setSuperheroes(obtainedSuperheroes);
   };
 
   const onSubmitModal = async (body: iSuperhero) => {
-    console.log(body);
     const superheroReturn = await superheroService.addSuperhero(body);
 
     if (superheroReturn) obtainSuperheroes();
   };
 
   const switchModal = () => {
-    console.log(modalRef);
     if (modalRef.current) {
       modalRef.current.classList.toggle("closed");
     }
