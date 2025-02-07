@@ -1,4 +1,11 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  HttpException,
+  HttpStatus,
+} from '@nestjs/common';
 import { SuperheroService } from './superhero.service';
 import { CreateSuperheroDto } from './dto/create-superhero.dto';
 
@@ -12,13 +19,38 @@ export class SuperheroController {
       createSuperheroDto.humilityScore < 0 ||
       createSuperheroDto.humilityScore > 10
     )
-      return 'Humility score must be between 0 and 10';
+      throw new HttpException(
+        { message: 'Humility score must be between 0 and 10' },
+        HttpStatus.UNPROCESSABLE_ENTITY,
+      );
 
-    return this.superheroService.create(createSuperheroDto);
+    try {
+      this.superheroService.create(createSuperheroDto);
+      return {
+        statusCode: HttpStatus.OK,
+        message: 'Superhero created',
+      };
+    } catch (error) {
+      throw new HttpException(
+        { message: 'Error creating superhero' },
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
   @Get()
   findAll() {
-    return this.superheroService.getAllSortedByHumilityScore();
+    try {
+      const superheroes = this.superheroService.getAllSortedByHumilityScore();
+      return {
+        statusCode: HttpStatus.OK,
+        data: superheroes,
+      };
+    } catch (error) {
+      throw new HttpException(
+        { message: 'Error fetching superheroes' },
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 }
