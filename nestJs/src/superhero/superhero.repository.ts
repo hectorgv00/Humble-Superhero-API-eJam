@@ -10,8 +10,8 @@ export class SuperheroRepository {
     // We get the information from the "database"
     const data = this.dbService.getAll();
 
-    // We sort the data by humility score desc
-    return data.sort((a, b) => a.humilityScore - b.humilityScore);
+    // I want the data to be stored by humility score descending
+    return data.sort((a, b) => b.humilityScore - a.humilityScore);
   }
 
   public create(data: CreateSuperheroDto) {
