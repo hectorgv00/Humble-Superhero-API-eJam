@@ -1,0 +1,19 @@
+.superhero-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .header-line,
+  .line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid var(--secondary-color);
+
+    &.header-line {
+      background-color: var(--principal-color);
+      color: var(--white);
+    }
+  }
+}
