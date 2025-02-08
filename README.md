@@ -34,7 +34,7 @@ This project is a simple API that allows users to add superheroes with their nam
 
 1. Clone the repository:
    ```sh
-   git clone [<repository-url>](https://github.com/hectorgv00/Humble-Superhero-API-eJam.git)
+   git clone https://github.com/hectorgv00/Humble-Superhero-API-eJam.git
    ```
 2. Navigate to the project directory:
    ```sh
